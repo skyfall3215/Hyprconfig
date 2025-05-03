@@ -1,6 +1,6 @@
 # Skyfall's hyprconfig
 
-Hello! This is my hyprland config. You can use it whatever you want. 
+Hello! This is my hyprland config. You can use it however you want. 
 
 ## Screenshot
 
