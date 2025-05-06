@@ -25,7 +25,7 @@ wl-clipboard
 dolphin
 bibata-cursor-theme
 kde polkit agent
-dracula gtk and qt themes
+Catppuccin Mocha Red gtk and qt themes
 kvantum
 qt6ct 
 swww (for hyprpanel)
