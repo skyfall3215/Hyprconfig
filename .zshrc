@@ -107,3 +107,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias fastfetch="fastfetch --config ~/.config/fastfetch/config.json"
+alias vim="nvim"
