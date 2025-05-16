@@ -34,7 +34,6 @@ syntax on
 filetype plugin indent on
 
 " ========== KISAYOLLAR ==========
-inoremap jk <Esc>           " Insert moddan jk ile çık
 nnoremap <leader>w :w<CR>   " <leader>w ile kaydet
 nnoremap <leader>q :q<CR>   " <leader>q ile çık
 
