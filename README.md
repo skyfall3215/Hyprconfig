@@ -12,7 +12,8 @@ This is the list of packages:
 
 ```
 hyprland
-ags-hyprpanel-git (install this with aur or look this link https://github.com/Jas-SinghFSU/HyprPanel)
+waybar
+ags-hyprpanel-git (it's an aur package for panel, but you don't need to use it because the main bar is waybar.)
 alacritty
 ubuntu nerd fonts (both normal and mono fonts)
 rofi
