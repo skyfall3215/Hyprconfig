@@ -33,6 +33,8 @@ swww (for hyprpanel)
 yay (to install aur packages but you can use paru if you want)
 font awesome fonts
 zsh (with oh my zsh)
+swaync
+swayosd
 ```
 
 I'll make a setup script when I'm available.
