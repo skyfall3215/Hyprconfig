@@ -60,6 +60,7 @@ window#waybar.hidden {
 #pulseaudio,
 #custom-media,
 #tray,
+#custom-notification,
 #custom-power-menu {
     background-color: rgba(30, 30, 46, 0.4);
     padding: 0 10px;
@@ -167,4 +168,8 @@ window#waybar.hidden {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #f38ba8;
+}
+
+#custom-notification {
+  font-family: "Ubuntu Nerd Font";
 }

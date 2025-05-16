@@ -7,9 +7,9 @@
     "margin-left": 8,
     "margin-right": 8,
 
-    "modules-left": ["hyprland/workspaces", "custom/media"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "backlight", "cpu", "memory", "network", "battery", "tray"],
+    "modules-right": ["pulseaudio", "backlight", "cpu", "memory", "network", "battery", "tray", "custom/notification"],
 
     "hyprland/workspaces": {
         "format": "{name}",
@@ -67,8 +67,8 @@
     "backlight": {
         "format": "\udb80\udce0 {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "on-scroll-up": "light -A 1",
-        "on-scroll-down": "light -U 1"
+        "on-scroll-up": "brightnessctl s 5%+",
+        "on-scroll-down": "brightnessctl s 5%-"
     },
     "battery": {
         "states": {
@@ -111,6 +111,26 @@
         "on-click": "pavucontrol",
         "tooltip-format": "{desc}, {volume}%"
     },
+    "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": ">span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
     "tray": {
         "icon-size": 16,
         "spacing": 10
