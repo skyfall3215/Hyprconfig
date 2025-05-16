@@ -16,7 +16,7 @@ waybar
 ags-hyprpanel-git (it's an aur package for panel, but you don't need to use it because the main bar is waybar.)
 alacritty
 ubuntu nerd fonts (both normal and mono fonts)
-rofi
+rofi-wayland
 hyprlock
 hypridle
 hyprpaper
@@ -24,7 +24,7 @@ wlogout
 cliphist
 wl-clipboard
 dolphin
-bibata-cursor-theme
+xcursor-breeze
 kde polkit agent
 Catppuccin Mocha Red gtk and qt themes
 kvantum
