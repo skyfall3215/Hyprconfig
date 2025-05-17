@@ -22,19 +22,19 @@ mods = "Control|Alt"
 size = 20
 
 [font.bold]
-family = "Ubuntu Mono"
+family = "Ubuntu Mono Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "Ubuntu Mono"
+family = "Ubuntu Mono Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "Ubuntu Mono"
+family = "Ubuntu Mono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "Ubuntu Mono"
+family = "Ubuntu Mono Nerd Font"
 style = "Regular"
 
 [window]
