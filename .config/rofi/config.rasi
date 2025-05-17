@@ -1,2 +1,6 @@
 @import "catppuccin-mocha"
 @theme "catppuccin-default"
+
+configuration {
+    font: "Ubuntu Nerd Font Regular 15";
+}
