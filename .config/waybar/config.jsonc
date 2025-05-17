@@ -9,7 +9,7 @@
 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": [],
-    "modules-right": ["hyprland/language", "pulseaudio", "backlight", "cpu", "memory", "network", "battery", "tray", "clock", "custom/notification"],
+    "modules-right": ["hyprland/language","pulseaudio", "backlight", "cpu", "memory", "network", "battery", "tray", "clock", "custom/notification"],
 
     "hyprland/workspaces": {
         "format": "{name}",
@@ -29,18 +29,6 @@
         "format": "\uf11c  {short}"
     },
 
-
-    "custom/media": {
-        "format": "{} \uf001",
-        "return-type": "json",
-        "format-icons": {
-            "Playing": "\uf04b",
-            "Paused": "\uf04c"
-        },
-        "max-length": 40,
-        "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-        "on-click": "playerctl play-pause"
-    },
     "clock": {
         "format": "\uf017 {:%H:%M}",
         "format-alt": " \uf073 {:%A, %B %d, %Y (%R)}",
@@ -127,14 +115,14 @@
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": ">span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": ">span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
