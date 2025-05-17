@@ -9,7 +9,7 @@
 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": [],
-    "modules-right": ["hyprland/language", "pulseaudio", "backlight", "cpu", "memory", "network", "battery", "tray", "clock", "custom/notification"],
+    "modules-right": ["custom/keyboard-layout","pulseaudio", "backlight", "cpu", "memory", "network", "battery", "tray", "clock", "custom/notification"],
 
     "hyprland/workspaces": {
         "format": "{name}",
@@ -18,18 +18,13 @@
         "all-outputs": true,
         "active-only": false
     },
-    "hyprland/window": {
-        "format": "{class}",
-        "rewrite": {
-            "firefox": "Mozilla Firefox",
-            "alacritty": "Terminal",
-        },
+    "custom/keyboard-layout": {
+        "format": "\uf11c {}",
+        "tooltip": false,
+        "exec": "hyprctl devices -j | jq -r '.keyboards[] | select(.name | contains(\"Virtual\") | not) | .active_keymap' | head -1",
+        "interval": 1,
+        "signal": 1
     },
-    "hyprland/language": {
-        "format": "\uf11c  {short}"
-    },
-
-
     "custom/media": {
         "format": "{} \uf001",
         "return-type": "json",
@@ -127,14 +122,14 @@
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": ">span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": ">span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
