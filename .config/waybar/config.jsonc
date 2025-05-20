@@ -9,7 +9,7 @@
 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": [],
-    "modules-right": ["hyprland/language","pulseaudio", "backlight", "cpu", "memory", "network", "battery", "tray", "clock", "custom/notification"],
+    "modules-right": ["hyprland/language","pulseaudio", "backlight", "cpu", "memory", "network", "battery", "clock", "tray" ,"custom/notification"],
 
     "hyprland/workspaces": {
         "format": "{name}",

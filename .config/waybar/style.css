@@ -161,6 +161,7 @@ window#waybar.hidden {
     color: #cba6f7;
     font-weight: bold;
     border-bottom: 2px solid #cba6f7;
+    font-family: "Ubuntu Nerd Font";
 }
 
 #tray {
