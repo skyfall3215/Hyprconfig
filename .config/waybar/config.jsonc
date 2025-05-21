@@ -8,8 +8,8 @@
     "margin-right": 8,
 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": [],
-    "modules-right": ["hyprland/language","pulseaudio", "backlight", "cpu", "memory", "network", "battery", "clock", "tray" ,"custom/notification"],
+    "modules-center": ["clock","custom/weather"],
+    "modules-right": ["hyprland/language","pulseaudio", "backlight", "cpu", "memory", "custom/network-speed", "battery", "tray" ,"custom/notification"],
 
     "hyprland/workspaces": {
         "format": "{name}",
@@ -23,6 +23,7 @@
         "rewrite": {
             "firefox": "Mozilla Firefox",
             "alacritty": "Terminal",
+            "virt-manager": "Virtual Machine Manager",
         },
     },
     "hyprland/language": {
@@ -134,5 +135,19 @@
     "tray": {
         "icon-size": 16,
         "spacing": 10
+    },
+    "custom/network-speed": {
+        "exec": "~/.config/waybar/scripts/network-speed.sh",
+        "return-type": "json",
+        "format": "{}",
+        "interval": 1,
+        "tooltip": true
+    },
+        "custom/weather": {
+        "exec": "~/.config/waybar/scripts/weather.sh",
+        "return-type": "json",
+        "format": "{}",
+        "interval": 900,
+        "tooltip": true
     }
 }
