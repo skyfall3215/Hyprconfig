@@ -9,7 +9,7 @@
 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock","custom/weather"],
-    "modules-right": ["hyprland/language","pulseaudio", "backlight", "cpu", "memory", "custom/network-speed", "battery", "tray" ,"custom/notification"],
+    "modules-right": ["hyprland/language","pulseaudio", "backlight", "cpu", "memory", "custom/network-speed", "battery","tray" ,"custom/notification"],
 
     "hyprland/workspaces": {
         "format": "{name}",
@@ -24,6 +24,7 @@
             "firefox": "Mozilla Firefox",
             "alacritty": "Terminal",
             "virt-manager": "Virtual Machine Manager",
+            "vlc": "VLC media player",
         },
     },
     "hyprland/language": {
@@ -149,5 +150,13 @@
         "format": "{}",
         "interval": 900,
         "tooltip": true
+    },
+    "custom/pacman": {
+        "format": "{}",
+        "interval": 3600, // Her saat başı kontrol et
+        "exec": "$HOME/.config/waybar/scripts/pacman-checkupdate.sh",
+        "return-type": "json",
+        "on-click": "alacritty -e yay -Syu", // Tıklandığında güncelleme yap
+        "signal": 8
     }
 }

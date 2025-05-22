@@ -5,12 +5,12 @@ mods = "Control|Alt"
 
 [[keyboard.bindings]]
 action = "IncreaseFontSize"
-key = "PageUp"
+key = "9"
 mods = "Control"
 
 [[keyboard.bindings]]
 action = "DecreaseFontSize"
-key = "PageDown"
+key = "8"
 mods = "Control"
 
 [[keyboard.bindings]]
