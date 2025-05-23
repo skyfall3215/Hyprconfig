@@ -23,9 +23,12 @@
         "rewrite": {
             "firefox": "Mozilla Firefox",
             "alacritty": "Terminal",
+            "kitty": "Terminal",
             "virt-manager": "Virtual Machine Manager",
             "vlc": "VLC media player",
-        },
+            "brave-browser": "Brave"
+
+    },
     },
     "hyprland/language": {
         "format": "\uf11c  {short}"
