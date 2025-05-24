@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Doom Emacs
+Comment=Emacs with Doom configuration
+Exec=/home/skyfall/.config/emacs/bin/doom run %F
+Icon=emacs
+Type=Application
+Categories=Development;Utility;TextEditor;
+StartupNotify=true
+Terminal=false
