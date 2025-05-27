@@ -1,5 +1,11 @@
 @import "catppuccin-mocha"
 
+configuration {
+    show-icons: true;
+    icon-theme: "Papirus";
+    drun-display-format: "{icon} {name}";
+}
+
 * {
   selected-active-foreground:  @background;
   lightfg:                     @text;
@@ -15,12 +21,12 @@
   spacing:                     2;
   alternate-normal-foreground: @foreground;
   urgent-background:           @background;
-  selected-normal-foreground:  @lightbg;
+  selected-normal-foreground:  @background;
   active-foreground:           @blue;
   background:                  @base;
-  selected-active-background:  @blue;
+  selected-active-background:  @yellow;
   active-background:           @background;
-  selected-normal-background:  @lightfg;
+  selected-normal-background:  @yellow;
   alternate-normal-background: @lightbg;
   foreground:                  @text;
   selected-urgent-foreground:  @background;

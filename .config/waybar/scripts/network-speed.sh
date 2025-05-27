@@ -15,25 +15,25 @@ sleep 1
 R2=$(cat /sys/class/net/$INTERFACE/statistics/rx_bytes)
 T2=$(cat /sys/class/net/$INTERFACE/statistics/tx_bytes)
 
-# Hız hesaplama (Mbps)
-RBPS=$(( (R2 - R1) * 8 / 1000000 ))
-TBPS=$(( (T2 - T1) * 8 / 1000000 ))
+# Hız hesaplama (MB/s)
+RBPS=$(( (R2 - R1) / 1000000 ))
+TBPS=$(( (T2 - T1) / 1000000 ))
 
-# Daha düşük değerlerde Kbps kullanma
+# Daha düşük değerlerde KB/s kullanma
 if [[ $RBPS -lt 1 ]]; then
-    RKBPS=$(( (R2 - R1) * 8 / 1000 ))
-    RUNIT="Kbps"
+    RKBPS=$(( (R2 - R1) / 1000 ))
+    RUNIT="KB/s"
 else
     RKBPS=$RBPS
-    RUNIT="Mbps"
+    RUNIT="MB/s"
 fi
 
 if [[ $TBPS -lt 1 ]]; then
-    TKBPS=$(( (T2 - T1) * 8 / 1000 ))
-    TUNIT="Kbps"
+    TKBPS=$(( (T2 - T1) / 1000 ))
+    TUNIT="KB/s"
 else
-    TKBPS=$TBPS  
-    TUNIT="Mbps"
+    TKBPS=$TBPS
+    TUNIT="MB/s"
 fi
 
 # Çıktı formatı

@@ -26,8 +26,8 @@
             "kitty": "Terminal",
             "virt-manager": "Virtual Machine Manager",
             "vlc": "VLC media player",
-            "brave-browser": "Brave"
-
+            "brave-browser": "Brave",
+            "nemo": "Nemo"
     },
     },
     "hyprland/language": {
