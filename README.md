@@ -4,7 +4,7 @@ Hello! This is my hyprland config. You can use it however you want.
 
 ## Screenshot
 
-![Screenshot](screenshot.png)
+![Screenshot](assets/screenshot.png)
 
 If you want to use this config, You'll need some packages.
 
