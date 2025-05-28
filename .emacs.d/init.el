@@ -15,7 +15,6 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-
 (use-package catppuccin-theme
   :config
   (setq catppuccin-flavor 'mocha)
@@ -35,7 +34,7 @@
 (size-indication-mode 1)
 
 ;; Tab bar aktif et
-(tab-bar-mode 1)
+(tab-bar-mode 0)
 (setq tab-bar-new-tab-choice nil) ;; Yeni tab açılırken açılacak buffer
 
 ;; Tab isimlerini okunabilir yap
@@ -98,6 +97,7 @@
    "to" '(tab-close-other :which-key "close other tabs")
    "tc" '(tab-close :which-key "close tab")
    "tm" '(tab-move :which-key "move tab")
+   "tb" '(tab-bar-mode :which-key "enable/disable tab bar") 
    "1"  (lambda () (interactive) (tab-bar-select-tab 1))
    "2"  (lambda () (interactive) (tab-bar-select-tab 2))
    "3"  (lambda () (interactive) (tab-bar-select-tab 3))))
@@ -133,8 +133,6 @@
   (doom-modeline-minor-modes nil) ; küçük modları gizle
   (doom-modeline-enable-word-count t))
 
-
-
 ;; Flycheck
 (use-package flycheck
   :ensure t
@@ -155,7 +153,6 @@
 (unless (package-installed-p 'all-the-icons)
   (package-install 'all-the-icons))
 
-
 ;; Font ayarı
 (set-face-attribute 'default nil :family "Ubuntu Mono Nerd Font" :height 200)
 
@@ -166,6 +163,16 @@
 ;; Org dosya dizini
 (setq org-directory "~/org/")
 
+(setq hscroll-margin 2
+      hscroll-step 1
+      scroll-conservatively 10
+      scroll-margin 0
+      scroll-preserve-screen-position t
+      auto-window-vscroll nil
+      mouse-wheel-scroll-amount '(2 ((shift) . hscroll))
+      mouse-wheel-scroll-amount-horizontal 2)
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -173,5 +180,5 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    '(all-the-icons catppuccin-theme consult doom-modeline evil eyebrowse
-		   flycheck general marginalia orderless popper
-		   vertico)))
+		   flycheck general good-scroll marginalia orderless
+		   popper scrollkeeper smooth-scroll sublimity vertico)))
