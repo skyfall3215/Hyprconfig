@@ -153,6 +153,14 @@ window#waybar.empty #window label {
     box-shadow: inherit;
 }
 
+/* Aktif workspace hover düzeltmesi */
+#workspaces button.active:hover, #hyprland-workspaces button.active:hover {
+    background-color: rgba(249, 226, 175, 0.9);
+    color: #cdd6f4;
+    border-color: #f9e2af;
+    box-shadow: 0 0 8px rgba(249, 226, 175, 0.7);
+}
+
 /* Module Styling */
 #clock,
 #battery,

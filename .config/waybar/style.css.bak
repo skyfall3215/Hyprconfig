@@ -1,50 +1,159 @@
+/* Catppuccin Mocha Colors */
+
+@keyframes blink {
+    to {
+        color: #cdd6f4;
+        background: #f38ba8;
+        border-color: #f9e2af;
+    }
+}
+
 * {
     border: none;
-    border-radius: 0;
+    border-radius: 8px;
     font-family: "UbuntuMono Nerd Font Regular", "Ubuntu Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands", monospace;
     font-weight: bold;
     font-size: 14px;
     min-height: 0;
 }
 
+widget label {
+    margin-top: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    transition: none;
+    background: rgba(30, 30, 46, 0.4);
+    border: 2px solid #f9e2af;
+    box-shadow: 0 0 3px 1px rgba(249, 226, 175, 0.3);
+}
+
+tooltip box {
+    background: rgba(49, 50, 68, 0.9);
+}
+
+#window {
+    color: #cdd6f4;
+    margin: 0 4px;
+}
+
 window#waybar {
-    background: rgba(30, 30, 46, 0.5);
+    background: transparent;
     color: #cdd6f4;
     border-radius: 10px;
     transition-property: background-color;
     transition-duration: 0.5s;
+    border: none;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
 
+window#waybar.empty #label {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar.empty #window label {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+#workspaces {
+    margin-top: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    background: rgba(30, 30, 46, 0.4);
+    box-shadow: 0 0 3px 1px rgba(249, 226, 175, 0.2);
+}
+
+#workspaces label {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    box-shadow: none;
+    color: #cdd6f4;
+}
+
 #workspaces button, #hyprland-workspaces button {
     padding: 0 5px;
     background-color: transparent;
     color: #cdd6f4;
-    border-radius: 8px;
-    margin: 5px 3px;
+    border: 1.5px solid transparent;
+    border-radius: 6px;
+    margin: 3px;
     min-width: 24px;
+}
+
+#workspaces button:first-child {
+    border-radius: 8px 6px 6px 8px;
+}
+
+#workspaces button:last-child {
+    border-radius: 6px 8px 8px 6px;
+}
+
+#workspaces button:only-child {
+    border-radius: 8px;
+}
+
+#workspaces button.persistent {
+    color: #1e1e2e;
+    font-weight: bold;
+    background-color: #fab387;
+    border-color: #f9e2af;
+}
+
+#workspaces button.special {
+    color: #1e1e2e;
+    font-weight: bold;
+    background-color: #a6e3a1;
+    border-color: #f9e2af;
 }
 
 #workspaces button.active, #hyprland-workspaces button.active {
     background-color: #f9e2af;
     color: #1e1e2e;
-    border-radius: 8px;
+    border-color: #f9e2af;
     font-weight: bold;
+    box-shadow: 0 0 5px rgba(249, 226, 175, 0.5);
 }
 
-#workspaces button:hover, #hyprland-workspaces button:hover {
-    background: rgba(249, 226, 175, 0.2);
-    box-shadow: inherit;
+#workspaces button.active label, #hyprland-workspaces button.active label {
+    color: #1e1e2e;
 }
 
 #workspaces button.urgent, #hyprland-workspaces button.urgent {
     background-color: #f38ba8;
     color: #1e1e2e;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
+#workspaces button:hover, #hyprland-workspaces button:hover {
+    background: rgba(249, 226, 175, 0.2);
+    border-color: #f9e2af;
+    color: #f9e2af;
+    box-shadow: inherit;
+}
+
+/* Module Styling */
 #clock,
 #battery,
 #cpu,
@@ -66,10 +175,7 @@ window#waybar.hidden {
     border-radius: 8px;
     color: #cdd6f4;
     border-bottom: 2px solid #f9e2af;
-}
-
-#window {
-    margin: 0 4px;
+    box-shadow: 0 0 3px 1px rgba(249, 226, 175, 0.2);
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -82,24 +188,38 @@ window#waybar.hidden {
     margin-right: 0;
 }
 
-#clock {
+#network {
+    color: #cba6f7;
+    border-color: #f9e2af;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+    border-color: #f38ba8;
+}
+
+#pulseaudio {
+    color: #94e2d5;
+    border-color: #f9e2af;
+}
+
+#pulseaudio.muted {
     color: #89dceb;
-    font-weight: bold;
+    padding-top: 4px;
 }
 
 #battery {
     color: #a6e3a1;
+    border-color: #f9e2af;
 }
 
 #battery.charging, #battery.plugged {
     color: #a6e3a1;
 }
 
-@keyframes blink {
-    to {
-        background-color: #f38ba8;
-        color: #1e1e2e;
-    }
+#battery.warning:not(.charging) {
+    color: #f38ba8;
+    border-color: #f38ba8;
 }
 
 #battery.critical:not(.charging) {
@@ -112,57 +232,40 @@ window#waybar.hidden {
     animation-direction: alternate;
 }
 
-#cpu {
-    color: #fab387;
+#backlight {
+    color: #f9e2af;
+    border-color: #f9e2af;
+    font-family: "Ubuntu Nerd Font","Font Awesome 6 Free Solid";
+}
+
+#clock {
+    color: #89dceb;
+    border-color: #f9e2af;
+    font-weight: bold;
 }
 
 #memory {
-    color: #f9e2af;
+    color: #f5e0dc;
+    border-color: #f9e2af;
 }
 
-#backlight {
-    font-family: "Ubuntu Nerd Font","Font Awesome 6 Free Solid";
-    color: #f9e2af;
-}
-
-#network {
-    color: #cba6f7;
-}
-
-#network.disconnected {
-    color: #f38ba8;
-}
-
-#pulseaudio {
-    color: #94e2d5;
-}
-
-#pulseaudio.muted {
-    color: #89dceb;
-}
-
-#custom-media {
-    color: #f5c2e7;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    color: #a6e3a1;
-}
-
-#custom-media.custom-vlc {
-    color: #f9e2af;
-}
-
-#language {
-    color: #b4befe;
-    font-weight: bold;
-    border-bottom: 2px solid #f9e2af;
-    font-family: "Ubuntu Nerd Font";
+#cpu {
+    color: #fab387;
+    border-color: #f9e2af;
 }
 
 #tray {
-    background-color: rgba(30, 30, 46, 0.3);
+    margin-top: 5px;
+    margin-left: 3px;
+    margin-right: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    transition: none;
+    background: rgba(30, 30, 46, 0.3);
+    border: 2px solid #f9e2af;
+    box-shadow: 0 0 3px 1px rgba(249, 226, 175, 0.2);
 }
 
 #tray > .passive {
@@ -174,37 +277,88 @@ window#waybar.hidden {
     background-color: #f38ba8;
 }
 
-#custom-notification {
-  font-family: "Ubuntu Nerd Font";
-  color: #f2cdcd;
+#tray menu separator {
+    min-height: 2px;
 }
 
-#custom-network-speed {
-    color: #b4befe;
+#tray menu menuitem label {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+#tray menu menuitem {
+    border-radius: 8px;
+    border: 1px solid rgba(17, 17, 27, 0.2);
+    margin: 1px;
+    padding: 3px 0 3px 0;
+}
+
+#custom-launcher {
+    margin-left: 8px;
+    padding-right: 5px;
+    color: #f9e2af;
+}
+
+#language {
+    color: #89b4fa;
+    font-weight: bold;
+    border-bottom: 2px solid #f9e2af;
     font-family: "Ubuntu Nerd Font";
 }
 
+#custom-media {
+    color: #f2cdcd;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    color: #a6e3a1;
+}
+
+#custom-media.custom-vlc {
+    color: #f9e2af;
+}
+
+#custom-notification {
+    font-family: "Ubuntu Nerd Font";
+    color: #f5e0dc;
+    border-color: #f9e2af;
+}
+
+#custom-network-speed {
+    color: #89b4fa;
+    font-family: "Ubuntu Nerd Font";
+    border-color: #f9e2af;
+}
+
 #custom-network-speed.connected {
-    color: #74c7ec;
+    color: #89dceb;
 }
 
 #custom-network-speed.disconnected {
     color: #f38ba8;
+    border-color: #f38ba8;
 }
 
 #custom-weather {
     color: #fab387;
     font-family: "Ubuntu Nerd Font";
+    border-color: #f9e2af;
 }
 
 #custom-weather.unavailable {
     color: #f38ba8;
+    border-color: #f38ba8;
 }
 
 #custom-pacman {
     color: #f9e2af;
     padding: 0 12px;
     font-weight: bold;
+    border-color: #f9e2af;
 }
 
 #custom-pacman.has-updates {
@@ -215,5 +369,5 @@ window#waybar.hidden {
 }
 
 #custom-pacman.no-updates {
-    color: #a6adc8;
+    color: #cdd6f4;
 }
