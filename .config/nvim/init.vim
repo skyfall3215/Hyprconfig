@@ -47,6 +47,7 @@ Plug 'jiangmiao/auto-pairs'       " Parantezleri otomatik kapatır
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 call plug#end()
 
@@ -96,6 +97,8 @@ require('lualine').setup {
   extensions = {}
 }
 END
+
+
 
 " Tabs
 nnoremap <leader>tn :tabnew<CR>
