@@ -28,7 +28,9 @@
             "vlc": "VLC media player",
             "brave-browser": "Brave",
             "nemo": "Nemo",
-            "emacs": "Doom Emacs"
+            "emacs": "Doom Emacs",
+            "io.github.diegoivanme.flowtime": "Flowtime",
+            "zen": "Zen Browser",
     },
     },
     "hyprland/language": {
